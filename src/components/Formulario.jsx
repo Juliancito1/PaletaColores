@@ -29,9 +29,9 @@ useEffect(() => {
         <section>
             <section className='bg-warning pb-4'>
             <h3 className='text-center mb-3'>Administrar Colores</h3>
-            <aside className='d-flex'>
-                <div className='ms-md-5 border border-2 border-dark' style={{backgroundColor: `${color}`,padding: '90px', display: 'inline'}}></div>
-                <Form className='ms-md-5 mt-lg-5 w-50' onSubmit={handleSubmit} >
+            <aside className='d-flex flex-column flex-md-row align-items-center'>
+                <div className='ms-md-5 border border-2 border-dark' style={{backgroundColor: `${color}`,padding: '70px'}}></div>
+                <Form className='mt-4 ms-md-5 mt-lg-0 w-50' onSubmit={handleSubmit} >
                     <Form.Group className="mb-3" controlId="formColor">
                     <Form.Control type="text" placeholder="Ingrese un color Ej: Blue" onChange={(e) => setColor(e.target.value)} value={color}/>
                     </Form.Group>

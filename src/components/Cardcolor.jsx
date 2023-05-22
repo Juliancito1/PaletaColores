@@ -1,12 +1,10 @@
 import React from 'react';
-import { Button, Card, ListGroup } from 'react-bootstrap';
+import { Button, Card, Col, ListGroup, Row } from 'react-bootstrap';
 
 const Cardcolor = ({color,borrarColor}) => {
     return (
-        <section className='mt-4'>
-            <section className='row'>
-        <ListGroup.Item>
-            <Card className='col-md-5 col-lg-3'>
+            <Col xs={12} md={6} lg={3}>
+            <Card className='my-3'>
         <Card.Header>{`${color}`}</Card.Header>
       <Card.Body>
         <section className='d-flex justify-content-center bg-warning p-3'>
@@ -17,9 +15,7 @@ const Cardcolor = ({color,borrarColor}) => {
             <Button variant='danger' onClick={() => {borrarColor(color)}}>Borrar</Button>
         </Card.Footer>
     </Card>
-    </ListGroup.Item>
-    </section>
-        </section>
+            </Col>
     );
 };
 

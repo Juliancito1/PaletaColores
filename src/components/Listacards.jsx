@@ -1,14 +1,16 @@
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
+import { Container, ListGroup, Row } from 'react-bootstrap';
 import Cardcolor from './Cardcolor';
 
 const Listacards = ({listadoColor, borrarColor}) => {
     return (
-        <ListGroup>
-            {
+        <Container>
+                <Row>
+                    {
                 listadoColor.map((color,indice) => <Cardcolor key={indice} borrarColor={borrarColor} color={color}></Cardcolor>)
-            }
-        </ListGroup>
+                    }
+                </Row>
+        </Container>
     );
 };
 
