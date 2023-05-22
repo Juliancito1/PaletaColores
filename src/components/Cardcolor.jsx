@@ -1,20 +1,24 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, ListGroup } from 'react-bootstrap';
 
-const Cardcolor = () => {
+const Cardcolor = ({color,listadoColor}) => {
     return (
         <section className='mt-4'>
-            <Card style={{ width: '300px' }}>
+            <section className='row'>
+        <ListGroup.Item>
+            <Card className='col-md-5 col-lg-3'>
+        <Card.Header>{`${color}`}</Card.Header>
       <Card.Body>
-        <Card.Title>Color</Card.Title>
-        <Card.Text className='d-flex bg-warning'>
-        <div className='ms-lg-5 border border-2 border-dark' style={{backgroundColor: 'blue',padding: '90px'}}></div>
-        </Card.Text>
-        <Card.Text className='d-flex justify-content-end'>
-            <Button>Borrar</Button>
-        </Card.Text>
+        <section className='d-flex justify-content-center bg-warning p-3'>
+        <div className='w-50 border border-2 border-dark contenedorColor' style={{backgroundColor: `${color}` ,padding: '90px'}}></div>
+        </section>
       </Card.Body>
+        <Card.Footer className='d-flex justify-content-end'>
+            <Button>Borrar</Button>
+        </Card.Footer>
     </Card>
+    </ListGroup.Item>
+    </section>
         </section>
     );
 };
