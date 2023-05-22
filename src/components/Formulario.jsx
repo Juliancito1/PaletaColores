@@ -1,12 +1,19 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Form } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import Listacards from './Listacards';
 const Formulario = () => {
-
     const [color, setColor] = useState('');
-    const [listadoColor, setListaColor] = useState([]);
+    let coloresLocalStorage = JSON.parse(localStorage.getItem('listadoColor')) || []
+    const [listadoColor, setListaColor] = useState(coloresLocalStorage);
+
+useEffect(() => {
+    localStorage.setItem('listadoColor',JSON.stringify(listadoColor))
+}, [listadoColor])
+
+    
+  
     const handleSubmit = (e) => {
         e.preventDefault();
         setListaColor([...listadoColor,color])
