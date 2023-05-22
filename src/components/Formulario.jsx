@@ -1,18 +1,23 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button, Form, ListGroup } from 'react-bootstrap';
-import Cardcolor from './Cardcolor';
+import { Button, Form } from 'react-bootstrap';
 import { useState } from 'react';
 import Listacards from './Listacards';
 const Formulario = () => {
+
     const [color, setColor] = useState('');
     const [listadoColor, setListaColor] = useState([]);
     const handleSubmit = (e) => {
         e.preventDefault();
         setListaColor([...listadoColor,color])
         setColor('');
-        console.log(listadoColor)
       }
+
+    const borrarColor = (nombreColor) => {
+        let arregloFiltrado = listadoColor.filter((elemColor) => elemColor !== nombreColor);
+        setListaColor(arregloFiltrado);
+      }
+
     return (
         <section>
             <section className='bg-warning pb-4'>
@@ -29,7 +34,7 @@ const Formulario = () => {
                 </Form>
                 </aside>
             </section>
-            <Listacards listadoColor={listadoColor} color={color}></Listacards>
+            <Listacards listadoColor={listadoColor} borrarColor={borrarColor} color={color}></Listacards>
         </section>
     );
 };

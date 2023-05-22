@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, ListGroup } from 'react-bootstrap';
 
-const Cardcolor = ({color,listadoColor}) => {
+const Cardcolor = ({color,borrarColor}) => {
     return (
         <section className='mt-4'>
             <section className='row'>
@@ -14,7 +14,7 @@ const Cardcolor = ({color,listadoColor}) => {
         </section>
       </Card.Body>
         <Card.Footer className='d-flex justify-content-end'>
-            <Button>Borrar</Button>
+            <Button variant='danger' onClick={() => {borrarColor(color)}}>Borrar</Button>
         </Card.Footer>
     </Card>
     </ListGroup.Item>
